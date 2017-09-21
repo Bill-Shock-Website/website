@@ -6,5 +6,6 @@ add_theme_support( 'post-thumbnails' );
 
 register_nav_menu('mainmenu', 'Main Navigation');
 show_admin_bar(false);
+require_once(TEMPLATEPATH . "/lib/admin-config.php");
 add_action('init', 'my_add_excerpts_to_pages');
 ?>
