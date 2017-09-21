@@ -6,4 +6,5 @@ include('posttypes/banners.php');
 include('posttypes/team.php');
 include('posttypes/blog.php');
 include('posttypes/faq.php');
+include('posttypes/testimonials.php');
 ?>
