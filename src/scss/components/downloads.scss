@@ -1,0 +1,50 @@
+.download{
+	.intro-content{
+		~ p{
+			padding-bottom: 65px;
+		}
+	}
+	
+}
+.thumb{
+	&-image{
+		float: left;
+		img{
+			max-width: 225px;
+			max-height: 222px;
+		}
+	}
+	&-description{
+		overflow: hidden;
+		padding:30px 20px;
+		h5{
+			color:$gull-grey;
+			padding-bottom: 30px;
+		}
+	}
+	a{
+		h3{
+			color: $sea-blue;
+		}
+	}
+	.col-3{
+		padding-top:20px;
+	}
+	.tile-swap-box{
+		background-color: $white;
+		cursor: pointer;
+		margin-bottom: 10px;
+		min-height: 222px;
+		@include transition-property(all);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(linear);
+		&:hover{
+			box-shadow:0 0px 20px 6px #e6e6e6;
+			a{
+				h3{
+					color: $dark-blue;
+				}
+			}
+		}
+	}
+}

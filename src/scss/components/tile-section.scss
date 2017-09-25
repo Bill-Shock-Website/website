@@ -1,0 +1,412 @@
+.title-blk{
+	h2{
+		padding-bottom:50px !important;
+	}
+}
+.tile-section{
+	background-color: $light-blue;
+	width: 100%;
+	h2{
+		padding-bottom: 5px;
+	}
+	p{
+		padding-bottom:0
+	}
+}
+.tile{
+    position: relative;
+	@include display-flex;
+    @include flex-direction(column);
+    @include align-items(flex-end);
+    @include justify-content(space-around);
+    &:before{
+		background-color: $turbo-yellow;
+		content: "";
+		height: 3px;
+		z-index: 2;
+		@include transform(translateY(-50%));
+		@include position(absolute, $top:50%, $left: 0px, $right: -80px);
+	}
+	&-combo{
+		background-color: $blue; 
+		display: block;
+		overflow: hidden;
+		padding: 130px 0px;
+		position: relative;
+		z-index: 1;
+		&:after{
+			background-color: $light-blue;
+			content: "";
+			@include position(absolute, $bottom: 0, $right: 0);
+			@include width-height(100%, 50%);
+			z-index: -1;
+		}
+		.row{
+			margin: 0px;
+		}
+		.vertical-align{
+			right: inherit;
+			left: 0px;
+			padding-left: 200px;
+		}
+	}
+	&-image{
+		background-repeat: no-repeat;
+		height: 100%;
+		min-height: 544px;
+		position: relative;
+		@include background-size(cover);
+		@include box-shadow(10px 10px 36px $footer-bg);
+		img{
+			width: 100%;
+		}
+		&:before{
+			background:url('#{$relative-path}/img/beat-line1.png') no-repeat top center;
+			background-size: 100%;
+			content: "";
+			@include position(absolute, $top:50%, $left: 0px);
+			@include width-height(321px,271px);
+			@include transform(translateY(-50%));
+			z-index: 2;
+		}
+		&:after{
+			background-color:$turbo-yellow;
+			content:"";
+			height: 3px;
+			@include position(absolute, $top:50%, $left: 321px);
+			width: 100%;
+		}
+	}
+	&-caption{
+		@include display-flex;
+		@include flex-direction(column);
+		@include justify-content(center);	
+		&:first-child{
+			color: $light-blue;
+			h2{
+				color:$white;
+			}
+		}
+		margin-bottom: 20px;
+		max-width:410px;
+	}
+	&-image-section{
+		padding:{
+			left: 80px;
+			right: 0px;
+		}
+	}	
+}
+.set-line{
+	position: relative;
+	z-index: 10;
+	&:before{
+		background-color:$yellow;
+		content:"";
+		height: 3px;
+		@include position(absolute, $top:50%, $left: 0px);
+		@include transform(translateY(-50%));
+		width: 200px;
+	}
+}	
+.left-tile{
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.right-tile{
+	color: $white;
+	padding:147px  100px;
+}
+.tile-section{
+	&.overlay{
+		width: 100%;
+		h2{
+			color:$white;
+			padding-bottom: 5px;
+		}
+		p{
+			line-height:28px;
+			padding-bottom:27px;
+		}
+	}
+}
+.overlay{
+	color: $white;
+	display: table;
+	position: relative;
+	padding: 0px 15px;
+	&:before{
+		content:"";
+		@include position(absolute, $top: 0, $left: 0);
+		@include width-height(100%, 100%);
+		background: $overlay-color;	
+		opacity: 0.8;		
+	}
+	.col-6{
+		display: table-cell;
+		width: 50%;
+	}
+}
+.vertical-align{
+	@include position(absolute, $top: 50%, $right: 100px);
+	@include transform(translateY(-50%));
+}
+	
+.button-transparent{
+	border:2px solid $white;
+	background-color:transparent;
+	padding:0;
+     &:after, &:before{
+     	display: none;
+    } 
+    a{
+    	color:$white;
+    	display: block;
+    	padding:10px;
+    	&:hover{
+    		color:$white;
+    	}
+    }
+}
+.tile-column-content{
+	width:490px;
+	max-width:490px;
+}
+
+//Responsive
+@media screen and (max-width:1400px){
+	.tile-column-content{
+		webkit-flex: 0 0 100%;
+       -ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+    	max-width: 100%;
+    	width:100%;
+	}
+}
+@media screen and (max-width:1200px) {
+	.tile {
+		&-image {
+			&-section {
+				padding-left: 40px;
+			}
+		}
+		&:before {
+			right: -40px;
+		}
+		&-combo {
+			.vertical-align {
+				padding-left: 80px;
+			}
+		}
+	}
+	.set-line {
+		&:before {
+			width:80px;
+		}
+	}
+}
+
+@media screen and (max-width:1024px){
+	.right-tile{
+		padding: 40px;
+	}
+	.tile-section{
+		.col-8{
+			max-width: 100%;
+		}
+		[class*="col-"] {
+			[class*="col-"] {
+		        max-width: 100%;
+		        flex: 100%;
+		    }
+		}		
+		.tile-box{
+			&:not(:last-child){
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+@media screen and (max-width:767px) {
+	.tile-image {
+		background-image: none !important;
+		min-height: inherit;
+		@include box-shadow(none);
+		&:before, &:after {
+			display:none;
+		}
+	}
+	.set-line:before, .tile:before, .tile-combo:after {
+		display: none;
+	}
+	.set-line{
+		.button-white{
+			color: $link-color;
+		}
+	}
+	.tile-combo{
+		background-color: $white;
+		&.section-padding {
+			padding:{
+				bottom:0;
+				top:0;
+			}
+		}
+		&:before{
+			display: none;
+		}
+		.col-6 {
+			padding: 0px;
+		}
+	}	
+	.tile-caption{
+		text-align: center;
+		max-width: 100%;
+		margin-bottom: 0px;
+		height: auto !important;
+		padding: 50px 15px;
+		&:first-child {
+			background-color:$primary-color;
+		}
+		&:not(:first-child) {
+			border-top: 3px solid $turbo-yellow;
+		}
+		display: block;
+	}
+	.left-tile {
+		background-image: none !important;
+	}
+	.right-tile {
+		padding: 50px 0px;
+	}
+	.tile-section{
+		h2{ padding-bottom:20px !important}
+	}
+	.right-tile{
+		text-align: center;
+	}
+	.tile-column-content{
+		text-align: center !important
+	}
+}
+@media screen and (max-width:640px) {
+	.tile-box{
+		&:not(:last-child){
+			border-bottom: 1px solid #efefef;
+			padding-bottom: 20px;
+		}
+	}
+}
+
+// subpage generic starts here
+
+.subpage{
+	.overlay{
+		&:before{
+			display: none;	
+		}
+		.tile-swap-box{
+			color: $white;
+			display: table;
+			position: relative;
+			width: 100%;
+			&.pink-color {
+				&:before{
+					background: $overlay-color;
+				}	
+			}
+			&.light-blue-color{
+				&:before{
+					background: $eagle-blue;
+				}	
+			}
+			&.orange-color{
+				&:before{
+					background: $orange-color;
+				}	
+			}
+			&.green-color{
+				&:before{
+					background: $green-color;
+				}	
+			}
+			&.dark-blue{
+				&:before{
+					background: $dark-blue;
+				}	
+			}
+
+			&:before{
+				content:"";
+				@include position(absolute, $top: 0, $left: 0);
+				@include width-height(100%, 100%);
+				opacity: 0.8;
+			}
+			&:nth-child(even){
+				@include display-flex;
+   				@include flex-direction(row-reverse);
+   				@align-items(flex-end);
+   				text-align: right;
+				
+				.tile-column-content{
+					float: right;
+					text-align: right;
+				}
+			}
+			.play-track{
+				@include position(absolute, $top: 50%, $left: 50%);
+				@include transform(translate(-50%, -50%));
+				z-index: 99;
+			}
+		}
+	}
+	.component-news{
+		&:before , &:after{
+			display: none;
+		}
+		h2{
+		    padding: 5px 0 45px;
+		}
+		.tile-swap{
+			&:before , &:after{
+				display: none;
+			}
+			&-caption{
+				color: $sea-blue;
+			}
+		}
+	}
+	.dropdown-trigger{
+		&:before{
+			top: 12px;
+		}
+	}
+}
+
+//responsive for subpage
+
+@media screen and (max-width:767px){
+	.subpage{
+		.left-tile{
+			display: none !important;
+		}
+		.right-tile{
+			width: 100%;
+		}
+		.overlay{
+			.right-tile{
+				a{
+					display: inline-block;
+				}
+			}
+		}
+	}	
+}
+
+@media screen and (max-width:640px){
+	.subpage{
+		.tile-section{
+			width: 100%;
+		}	
+	}
+}

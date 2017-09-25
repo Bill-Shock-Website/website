@@ -1,0 +1,31 @@
+.error-page {  
+    background-color: $light-blue;  
+    min-height: 100vh;
+    @include display-flex();
+    @include justify-content(space-between);
+    @include flex-direction(column);
+    header {
+        position: relative;
+    }
+    .footer{
+        padding: 0px;
+        &:before, &:after{
+            display: none;
+        }
+    }
+    .copy-rights {
+        padding: 20px 0;
+    }
+    .footer-bg{
+        padding: 0px;
+    }
+}
+.error-content {
+    background-color: #fff;
+    margin: 40px auto;
+    padding: 40px;
+    text-align: center;
+}
+.server-maintenance{
+    justify-content: center;
+}

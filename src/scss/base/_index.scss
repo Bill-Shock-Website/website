@@ -1,0 +1,10 @@
+// Core variables and mixins
+@import 'variables';
+@import '../../../node_modules/compass-mixins/lib/compass';
+@import 'mixins';
+@import 'common';
+@import 'fonts';
+
+.blue-bg{
+	background-color: $light-blue;
+}

@@ -1,0 +1,45 @@
+.accordion-section{
+	margin-bottom:0px;
+	.accordion{
+		h4{
+			border-top: 1px solid $light-grey;
+			color: $sea-blue;
+			cursor: pointer;
+			padding: 15px 30px 15px 0px;
+			position: relative;
+			&:after{
+				content:"\f107";
+				font:{
+					family: FontAwesome;
+					size: $font-md3;
+				}
+				@include position(absolute, $right: 10px, $top: 50%);
+				@include transform(translateY(-50%));
+			}
+			&.open{
+				color: $secondary-color;
+				&:after{
+					content:"\f106";
+					color: $secondary-color;
+				}
+			}
+		}
+		&-content{
+			display: none;
+			padding: 0px 10px 15px 0;
+			ul{
+				li{
+					padding:10px 0 10px 15px;
+				}
+				a{
+					color:$dark-blue;
+				}
+			}
+		}
+		&:first-child{
+			h4{
+				border-top: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,95 @@
+@mixin width-height($width, $height){
+	width:$width;
+	height:$height;
+}
+
+@mixin bg-positions($repeat:no-repat, $align:left top, $size:cover) {
+  background-repeat:$repeat;
+  background-position:$align;
+  @include background-size($size);
+}
+
+@mixin transition-event($props:all, $duration:0.15s, $timing:linear) {
+	@include transition-property($props);
+	@include transition-duration($duration);
+	@include transition-timing-function($timing);
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin css-triangle($color, $size){
+   border-left: $size solid transparent;
+   border-right: $size solid transparent;
+   border-bottom: $size solid $color;
+}
+
+@mixin bottom-left($bottom, $left) {
+	bottom: $bottom;
+	left: $left; 
+}
+
+@mixin right-top($right, $top) {
+	right: $right;
+	top:$top; 
+}
+
+@mixin transition-event($props:all, $duration:0.15s, $timing:linear) {
+  @include transition-property($props);
+  @include transition-duration($duration);
+  @include transition-timing-function($timing);
+}
+
+// Animation
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+/*checkbox*/
+@include keyframes(checkbox-check) {
+  0% {
+      width: 0;
+      height: 0;
+      border-color: $white;
+      transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+   33% {
+       width: 6px;
+       height: 0;
+       transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  100% {
+      width: 6px;
+      height: 9px;
+      border-color: $white;
+      transform: translate3d(0, -9px, 0) rotate(45deg);
+  }
+}
+

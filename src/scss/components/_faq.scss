@@ -1,0 +1,94 @@
+.component-faq {
+	background-color: $white; 
+	margin-bottom: 100px;
+	&.generic-faq {
+		margin-bottom: 0px;
+	}
+	h4{
+		padding-bottom: 0px;
+	}
+	.card {
+		border: none;
+		border-bottom: 1px solid #d0d0d0;
+		border-radius: inherit;
+		&-block {
+			line-height: 28px;
+			padding: 0px 120px 30px 0px;
+			span {
+				font: {
+					/* family: $font-work-sans; */
+					weight: 700;
+					size: $font-md3;	
+				}
+			}
+		}
+		&-header {
+			background-color: $white;
+			border-bottom: none; 
+			padding:{
+				bottom: 0px;
+				left: 0px;
+				right: 30px;
+				top: 0px;
+			}
+			&:first-child {
+				border-radius: 0px;
+			}
+			h5 {
+				line-height: 28px;
+			}
+			a {
+				color: $tiber;
+				display: block; 
+				padding: 15px 0px;
+				&:after {
+					content: "\f078";
+					font:{
+						family: $font-awesome;
+						size: $font-md;
+					}
+					@include position(absolute, $top: 20px, $right: 10px, $bottom: null, $left: null);
+				}
+				&[aria-expanded="true"] {
+					color: $yellow;
+					&:after {
+						content: "\f077";
+						color: $yellow;
+					}
+				}				
+			}			
+		}	
+	}	
+}
+
+@media screen and (max-width: 1024px) {
+    .component-faq {
+		padding: 40px;
+		margin-bottom: 40px;
+	}
+	.component-faq {
+		&.generic-faq {
+			padding: 50px 0;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.component-faq {
+		.card {
+			&-block {
+				padding: 0px 0px 30px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.component-faq {
+		.card {
+			&-header {
+				padding: 20px 40px 18px 0px;
+			}
+		}
+	}
+}

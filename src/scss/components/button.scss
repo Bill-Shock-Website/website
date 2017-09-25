@@ -1,0 +1,144 @@
+
+//button 
+.button {
+    border:0;
+    border-radius: 50px;
+    color:$red;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing:1px;
+    text-transform: uppercase;   
+    cursor:pointer;
+    height:50px;
+    min-width: 215px;
+    overflow: hidden;
+    padding:10px;
+    text-align: center;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+    @include single-transition(all, 0.3s, cubic-bezier(0.75, 0, 0.125, 1));
+    -webkit-backface-visibility:hidden;
+    @include transform(translate3d(0,0,0));
+    background: $white;
+    &:after {
+        border-radius: 50px;
+        background:white; 
+        z-index:-1; 
+        top:2px;
+        right:2px; 
+        left:2px; 
+        bottom:2px;
+    }
+    &:after, &:before {
+        content:"";
+        position:absolute;
+    }
+    &:before {
+        background: $black;
+        left:0px;
+        top:0;
+        height:100%;
+        width:100%;
+        @include transform(translateY(100%));
+        @include single-transition(transform, 0.3s, cubic-bezier(0.75, 0, 0.125, 1));
+        z-index:-2;
+    }
+    &:hover { 
+        color:$sea-blue;
+        background: $black;
+        &:before {
+            @include transform(translateY(0%));
+        }   
+    } 
+    &-grey{      
+        color: $sea-blue;  
+        background: $sea-blue; 
+        &:before{
+            background: $black;
+        }  
+        &:hover{
+            color: $black;           
+        }
+    }
+    &-disable{
+        background: $button-disable-bg;
+        color: $button-disable-bg;
+        pointer-events: none;
+    }
+    &-solid{      
+        color: $white;  
+        background: $red;
+        font-weight: 700; 
+         &:after{
+            background: $red;
+        } 
+        &:before{
+            background: $black;
+        }  
+        &:hover{
+            color: $black;           
+        }
+    }
+    &-blk{
+        a{
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    &-round{
+        min-width: 100px;
+        &.button:before, &.button:after{
+            border-radius: 20px;
+        }
+        &.button:after{
+            border: 2px solid $red;
+        }
+        &:hover{    
+            color: $red;
+            background: transparent;
+        }
+    }
+    &-inner{
+            display: inline-block;
+            vertical-align: middle;        
+    }
+}
+//button tag
+.generic .button-tag a {
+    &, &:hover {
+        color:$white;
+    }
+}
+.button-tag{
+    margin-bottom: 40px;
+    a{        
+        background-color: $sea-blue;
+        border-radius: 30px;
+        color: $white;
+        display: inline-block;
+        line-height: 21px;
+        overflow:hidden; 
+        padding:5px 10px;
+        margin:3px 1px;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        &:hover{
+            background-color:$dark-blue;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .button{
+        &-inner{
+            display: block;
+            &:first-child{
+                margin-bottom: 20px;
+            }
+        }
+    }
+    
+}
