@@ -63,18 +63,6 @@
               }
           });
 
-           $('.accordion h5').on('click',function(){   
-              if(!$(this).hasClass('open')){
-                  $('.accordion h5').removeClass('open');
-                  $('.accordion-content').stop(true, true).slideUp();
-                  $(this).addClass('open');
-                  $(this).parent('.accordion').find('.accordion-content').slideDown();
-              }else{
-                  $('.accordion h5').removeClass('open');
-                  $('.accordion-content').stop(true, true).slideUp();
-              }
-            });
-
           $(".price-menu").find('li:first-child').addClass('current');
           $(".price-menu li a").on('click',function(event) {
               event.preventDefault();
@@ -325,19 +313,17 @@
     },  
 
     _accordion = function(){
-      $('.accordion:first-child').find('h4').addClass('open');
-      $('.accordion:first-child').find('.accordion-content').slideDown();
-      $('.accordion h4').on('click',function(){   
-        if(!$(this).hasClass('open')){
-            $('.accordion h4').removeClass('open');
-            $('.accordion-content').stop(true, true).slideUp();
-            $(this).addClass('open');
-            $(this).parent('.accordion').find('.accordion-content').slideDown();
-        }else{
-            $('.accordion h4').removeClass('open');
-            $('.accordion-content').stop(true, true).slideUp();
-        }
-      });
+       $('.accordion h5').on('click',function(){   
+          if(!$(this).hasClass('open')){
+              $('.accordion h5').removeClass('open');
+              $('.accordion-content').stop(true, true).slideUp();
+              $(this).addClass('open');
+              $(this).parent('.accordion').find('.accordion-content').slideDown();
+          }else{
+              $('.accordion h5').removeClass('open');
+              $('.accordion-content').stop(true, true).slideUp();
+          }
+        });
     },
 
     _fileBrowes = function(){

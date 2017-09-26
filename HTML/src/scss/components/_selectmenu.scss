@@ -127,7 +127,7 @@
 }
 .ui-menu .ui-menu-item-wrapper {
 	border-bottom:1px solid rgba(204,204,204,0.6);
-    font-size: $font-md;
+    font-size: $font-md1-1;
 	position: relative;
 	padding:10px 0;
 }
@@ -1250,7 +1250,7 @@ select{
 .ui-selectmenu-button.ui-button:focus{ outline:none;}
 .ui-selectmenu-button.ui-button{
 	color:grey;
-  font-size: $font-md;
+  	font-size: $font-md1-1;
 	position: relative; 
 	padding-right:50px;
 }

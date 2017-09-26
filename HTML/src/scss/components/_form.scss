@@ -1,32 +1,37 @@
 // Form common
 .form-row {
-	margin-bottom:24px;
+	margin:{
+		bottom:24px;
+		left: 0px;
+		right: 0px;
+	}
 	position:relative;
-		&.error-row{
-			.floating-item-input{
-				border-bottom:1px solid;
-				border-color: $error-color;
-			}
-			.floating-item-label, 
-			.floating-item-input:focus ~ .floating-item-label{
-				color:$error-color;
-			}
+	&.error-row{
+		.floating-item-input{
+			border-bottom:1px solid;
+			border-color: $error-color;
 		}
-		.error-message{
-			background-color:$error-color;
-			color: $white;
-			display: none;
-			font-size:$font-md;
-			padding:10px;
-			text-align: left;
-			width:100%;
+		.floating-item-label, 
+		.floating-item-input:focus ~ .floating-item-label{
+			color:$error-color;
 		}
-	
+	}
+	.error-message{
+		background-color:$error-color;
+		color: $white;
+		display: none;
+		padding:10px;
+		text-align: left;
+		width:100%;
+	}		
+	label{
+		margin-bottom: 0px;
+	}	
 }
 .input-item {
 	display: block;
 	font:{
-		size: $font-md;
+		size: $font-md1-1;
 	}
 	height: 46px;
 	line-height: 20px;

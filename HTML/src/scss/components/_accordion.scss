@@ -3,11 +3,12 @@
 	.accordion{
 		h5{
 			border-top: 1px solid $light-grey;
-			color: $red;
+			color: $turbo-black;
 			cursor: pointer;
 			padding: 15px 30px 15px 0px;
 			position: relative;
 			&:after{
+				color: $red;
 				content:"\f0d7";
 				font:{
 					family: FontAwesome;
@@ -17,7 +18,7 @@
 				@include transform(translateY(-50%));
 			}
 			&.open{
-				color: $black;
+				color: $red;
 				&:after{
 					content:"\f0d8";
 					color: $arrow;

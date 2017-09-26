@@ -1,11 +1,12 @@
 .file-browse{
 	.button{
 		background-color: transparent;
+		color: $red;
 		font-size: $font-md;
 		font-weight: 700;
 		line-height: 20px;
-		min-width: 130px;
-		width: 130px;
+		max-width: 100px;
+		width: 100%;
 		text-decoration: none;	
 		@include position(absolute, $top: 0, $right: 0);
 		@include box-shadow(none);
@@ -15,6 +16,7 @@
 	}
 	input{
 		border: 1px solid $form-border;
+		padding: 7px 15px;
 		padding-right: 140px;
 	}
 	.file-upload{
@@ -24,7 +26,7 @@
 		padding-right: 0px;		
 		&:hover{
 			button{		
-				color: $sea-blue;
+				color: $black;
 			}
 		}
 	}

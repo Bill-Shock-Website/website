@@ -819,14 +819,23 @@
 	.price-blk{
 		margin-bottom:0
 	}
+	.subpage{
+		.homebanner{
+			&-content{
+				h1{
+					font-size: 38px;
+				    line-height: 44px;
+				    padding-bottom: 0;
+				}
+			}
+			[class*=col-] {
+				padding-top: 105px;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 640px){
-	header {
-		.logo{
-			width: 45%;
-		}
-	}
 	.homebanner-content{
 		h1{
 			font-size:24px;
@@ -879,6 +888,17 @@
 		h5{
 			padding-bottom: 40px;
 			text-transform: uppercase;
+		}
+	}
+	.subpage{
+		.homebanner{
+			&-content{
+				h1{
+					font-size: 24px;
+				    line-height: 30px;
+				    padding-bottom: 28px;
+				}
+			}
 		}
 	}
 }

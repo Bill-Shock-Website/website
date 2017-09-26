@@ -1,35 +1,28 @@
-/*.dyn-button a{
-    border:0;
-    color:$black;
-    display: inline-block;
-    font-size: $font-sm1;
-    line-height:$font-lg3;
-    letter-spacing:1px;
-    text-transform: uppercase;     
-}*/
 .dyn-button { 
     a{
-        border:0;
+         border:2px solid $red;
         border-radius: 50px;
-        color:$red;
+        color:$white;
         display: inline-block;
+        font-family: $font-workSansBold;
         font-size: 12px;
-        line-height: 30px;
+        line-height: 18px;
         letter-spacing:1.5px;
         text-transform: uppercase;   
         cursor:pointer;
         height:50px;
-        min-width: 215px;
-        padding:10px;
+        max-width: 215px;
+        padding:15px;
         text-align: center;
         overflow:hidden;
         position:relative;
+        width: 100%;
         z-index:1;
         @include single-transition(all, 0.3s, cubic-bezier(0.75, 0, 0.125, 1));
         -webkit-backface-visibility:hidden;
         @include transform(translate3d(0,0,0));
-        background: $white;
-        &:after {
+        background: $red;
+       /* &:after {
             border-radius: 50px;
             background:white; 
             z-index:-1; 
@@ -51,25 +44,15 @@
             @include transform(translateY(100%));
             @include single-transition(transform, 0.3s, cubic-bezier(0.75, 0, 0.125, 1));
             z-index:-2;
-        }
+        }*/
         &:hover { 
-            color:$sea-blue;
-            background: $black;
-            &:before {
+            background: $white;
+            color:$red;
+            /*&:before {
                 @include transform(translateY(0%));
-            }
+            }  */ 
         } 
-    }
-    &-grey a{      
-        color: $sea-blue;  
-        background: $sea-blue; 
-        &:before{
-            background: $black;
-        }  
-        &:hover{
-            color: $black;           
-        }
-    }
+    }   
     &-disable a{
         background: $button-disable-bg;
         color: $button-disable-bg;
@@ -77,46 +60,49 @@
     }
     &-solid a{      
         color: $white;  
-        background: $red; 
-        &:after{
+        background: $red;
+       /* &:after{
             background: $red;
         } 
         &:before{
             background: $black;
-        }  
+        }  */
         &:hover{
             color: $black;           
-        }
-    }
-    &-blue a{      
-        color: $white;  
-        background: $dark-blue;
-        &:after{
-            background: $dark-blue;
-        }  
-        &:hover{
-            color: $sea-blue; 
-            &:after{
-                background: $white;
-            }            
         }
     }
     &-white a{
-        &:before{
+        /*&:before{
             background: $black;
+        }*/        
+        background-color: $white;
+        border-color: $white;
+        &:hover{
+            background-color: $white;
+            border-color: $white;
         }
     }
-    &-secondary a{      
-        color: $red;  
-        background: $red; 
-        &:after{
-            background: $white;
-        } 
-        &:before{
-            background: $black;
-        }  
+    &-round a{
+        min-width: 100px;
+        max-width: inherit;
+        width: inherit;
+        /*&.button:before, &.button:after{
+            border-radius: 30px;
+        }*/
+       /* &.button:after{
+            border: 2px solid $red;
+        }*/
+        &:hover{    
+            color: $red;
+            background: transparent;
+        }
+    }
+    &-secondary a{
+        background-color: $white;
+        color: $red;
         &:hover{
-            color: $black;           
+            background-color: $red;
+            color: $white;
         }
     }
 }

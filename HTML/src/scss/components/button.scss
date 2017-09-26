@@ -1,26 +1,28 @@
 //button 
 .button {
-    border:0;
+    border:2px solid $red;
     border-radius: 50px;
-    color:$red;
+    color:$white;
     display: inline-block;
+    font-family: $font-workSansBold;
     font-size: 12px;
-    line-height: 30px;
+    line-height: 18px;
     letter-spacing:1.5px;
     text-transform: uppercase;   
     cursor:pointer;
     height:50px;
-    min-width: 215px;
-    padding:10px;
+    max-width: 215px;
+    padding:15px;
     text-align: center;
     overflow:hidden;
     position:relative;
+    width: 100%;
     z-index:1;
     @include single-transition(all, 0.3s, cubic-bezier(0.75, 0, 0.125, 1));
     -webkit-backface-visibility:hidden;
     @include transform(translate3d(0,0,0));
-    background: $white;
-    &:after {
+    background: $red;
+   /* &:after {
         border-radius: 50px;
         background:white; 
         z-index:-1; 
@@ -42,24 +44,14 @@
         @include transform(translateY(100%));
         @include single-transition(transform, 0.3s, cubic-bezier(0.75, 0, 0.125, 1));
         z-index:-2;
-    }
+    }*/
     &:hover { 
-        color:$sea-blue;
-        background: $black;
-        &:before {
+        background: $white;
+        color:$red;
+        /*&:before {
             @include transform(translateY(0%));
-        }   
+        }  */ 
     } 
-    &-grey{      
-        color: $sea-blue;  
-        background: $sea-blue; 
-        &:before{
-            background: $black;
-        }  
-        &:hover{
-            color: $black;           
-        }
-    }
     &-disable{
         background: $button-disable-bg;
         color: $button-disable-bg;
@@ -68,33 +60,43 @@
     &-solid{      
         color: $white;  
         background: $red;
-        &:after{
+       /* &:after{
             background: $red;
         } 
         &:before{
             background: $black;
-        }  
+        }  */
         &:hover{
             color: $black;           
         }
     }
     &-blk{
         a{
+            color: #fff;
             display: inline-block;
+            font-size: 12px;
+            line-height: 18px;
+            margin-left: 25px;
+            padding-left: 24px;
+            position: relative;
             vertical-align: middle;
         }
     }
     &-round{
+        background-color: $white;
+        color: $red;
         min-width: 100px;
-        &.button:before, &.button:after{
+        max-width: inherit;
+        width: inherit;
+        /*&.button:before, &.button:after{
             border-radius: 30px;
-        }
-        &.button:after{
+        }*/
+       /* &.button:after{
             border: 2px solid $red;
-        }
+        }*/
         &:hover{    
-            color: $red;
-            background: transparent;
+            color: $white;
+            background: $red;
         }
     }
     &-inner{
@@ -102,8 +104,16 @@
             vertical-align: middle;        
     }
     &-white{
-        &:before{
+       /* &:before{
             background: $black;
+        }*/
+    }
+    &-secondary{
+        background-color: $red;
+        color: $white;
+        &:hover{
+            background-color: $white;
+            color: $red;
         }
     }
 }

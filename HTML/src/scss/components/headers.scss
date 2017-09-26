@@ -32,8 +32,7 @@ header{
 }
 .logo{
 	display: inline-block; 
-	float:left;    
-	margin-left: 16.66667%;
+	float:left;  
 	width: 130px;
     padding: 12px 0;
 	.hamburger{
@@ -65,6 +64,7 @@ nav{
 		letter-spacing: 1px;
 		padding: 14px 10px;
 		position: relative;
+		text-transform: uppercase;
 		&:hover, &.active{
 			color:$sea-blue;
 		}
@@ -130,52 +130,10 @@ nav, .button-round{
 .hidden{
 	overflow: hidden;
 }
-.subpage{
+.subpage{	
 	header{
-		border-bottom: 1px solid;
-		border:{
-			color: rgba(255,255,255,0.5)
-		}
-		height: 105px;
-	}
-	.logo{
-		float: left;
-		padding:0;
-		margin: 18px 0;
-		width: 142px;
-	}
-	nav{
-		float: right;
-		padding-top:35px;
-		margin-bottom: 0px;
-		a{
-			color:$white;
-			padding: 32px 14px 10px;
-			&:after{
-				background-color:$white;
-				bottom:-8px;
-			}
-		}
-		li{
-			font-size:$font-md2;
-			ul{
-				a{
-					color:$black;
-					display: block;
-					padding: 10px;
-					&:hover{
-						color:$sea-blue;
-					}
-				}
-			}
-			&:hover{
-				ul{
-					top: 70px;
-					ul{
-						top: 0px;
-					}
-				}
-			}
+		.logo{			  
+			margin-left: 16.66667%;
 		}
 	}
 }
@@ -192,8 +150,10 @@ nav, .button-round{
 	.logo{
 		position: absolute;
 		left: 50%;
-		width: 190px;
+		width: 120px;
 	 	@include transform(translateX(-50%));
+	 	padding: 0px;
+    	top: 40px;
 	}
 	.mobile-login,  .tab-show{
 		display: block;
@@ -315,22 +275,4 @@ nav, .button-round{
 	            }      
 	        }
 		}
-
-	.subpage{
-		nav{
-			float: none;
-			padding-top:120px;
-			li{
-				a{
-					padding:10px 30px;
-				}
-			ul{
-				a{
-					color:$white;
-					padding:10px 30px;
-				}
-			}
-			}
-		}
-	}	
 }
