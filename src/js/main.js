@@ -342,18 +342,18 @@
 
        //Select menu
        $('.select-menu').each(function() {
-           var $placeholder = $(this).data('placeholder');
-           $(this).selectmenu({
-               placeholder: $placeholder,
-               appendTo: $(this).parent(".select-row"),
-               create: function(event, ui) {
-                   $('.ui-selectmenu-text').addClass('placeholder');
-               },
-               change: function(event, ui) {
-                   $('.ui-selectmenu-text').removeClass('placeholder');
-               }
-           });
-       });
+        var $placeholder = $(this).parent().data('placeholder');
+        $(this).selectmenu({
+          placeholder: $placeholder,
+          appendTo: $(this).parent(".select-row"),
+          create: function(event, ui) {
+              $('.ui-selectmenu-text').addClass('placeholder');
+          },
+          change: function(event, ui) {
+            $(this).removeClass('placeholder');
+          },
+        });
+      }); 
 
        $('.floating-item input, textarea').focus(function(){
            $(this).parent('.floating-item').addClass('input-animate'); 

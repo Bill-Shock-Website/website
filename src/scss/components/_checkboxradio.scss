@@ -6,8 +6,8 @@
 	&-label {
 		cursor: pointer;
 		display:inline-block;
-		line-height: 18px;
-		padding-left: 25px;
+		line-height: 35px;
+		padding-left: 46px;
 		position: relative;
 		&:before {
 			background: transparent;
@@ -16,7 +16,7 @@
 			left: 2px;
 			position: absolute;
 			top: 0px;
-			@include width-height(16px, 16px);
+			@include width-height(35px, 35px);
 			transition: all 250ms cubic-bezier(.4, .0, .23, 1);
 		}
 		&:hover{
@@ -80,15 +80,15 @@
 	}
 	&-item:checked ~ .checkbox-label{
 		&:before {
-		    border: 8px solid $sea-blue;
+		  border: 18px solid $sea-blue;
 			@include animation(shrink-bounce 400ms cubic-bezier(.4, .0, .23, 1));
 		}
 		&:after{
 			color: $white;
 			content:"";
 			position: absolute;
-			top:8px;
-			left:5px;
+			top:17px;
+			left:15px;
 			border-right: 2px solid transparent;
 			border-bottom: 2px solid transparent;
 			transform: rotate(45deg);

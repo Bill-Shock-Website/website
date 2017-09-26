@@ -1,0 +1,91 @@
+.subpage{
+	padding-top: 90px;	
+	.homebanner{
+		display: flex;
+		align-items: center;
+		height: 305px;
+		min-height: inherit;
+		.homebanner-content{
+			color: $white;
+			padding-top: 0px;
+			width: inherit;
+		}
+	}
+
+	.breadcrumb{
+		background-color: transparent;
+		color: $red;
+    	font-family: $font-workSansBold;  
+    	margin-bottom: 0;
+    	padding: 0; 
+    	text-transform: uppercase;
+		li{
+			display: inline-block;
+			padding: 10px;
+			position: relative;
+			&:first-child{
+				padding-left: 0px;
+			}
+			&:not(:last-child){
+				&:before{
+					color: $white;
+					content: "/";
+					@include position(absolute, $right: -5px, $top: 50%);
+					@include transform(translateY(-50%));
+				}
+			}
+		}
+	}
+	.process-block{
+		counter-reset: section;	
+		padding: 50px 15px;
+		border-bottom: 1px solid $grey-bg;
+		li{
+			color: $grey-bg;
+			display: inline-block;
+    		font:{
+    			family: $font-workSansBold; 
+    			size: 16px; 
+    		}
+    		line-height: 22px;
+			padding: 20px 80px;
+			position: relative;
+			text-transform: uppercase;
+			&:before{
+				border: 3px solid $grey-bg;			
+				border-radius: 50%;
+				content: counter(section);	
+				counter-increment: section; 
+				font-size: 20px;
+				@include width-height(60px, 60px);
+				@include position(absolute, $left: 0, $top: 0);
+				@include display-flex;
+				@include justify-content(center);
+				@include align-items(center);
+			}
+			&.active{
+				color: $green;
+				&:before{
+					border-color: $green;	
+				}	
+			}
+		}
+	}
+	.form-wrap{
+		max-width: 460px;
+	}
+	.ui-selectmenu-text.placeholder{
+		color:  $fm-flt-label-color;
+	}
+	.title-content{
+		h3{
+			span{
+				font-family: $font-workSansRegular;
+			}
+		}
+	}
+}
+
+.section-padding{
+	padding: 80px 0px 40px;
+}

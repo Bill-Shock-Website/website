@@ -715,7 +715,6 @@ button.ui-button::-moz-focus-inner {
 	background: $select-row;
 	padding: 15px 10px;
 	text-align: left;
-	text-transform: uppercase;
 	white-space: nowrap;
 	width:100%;
 }
@@ -1260,7 +1259,7 @@ select{
 	content: "\f107";
 	color:$tiber;
  	font-family: $font-awesome;
- 	font-size:20px;
+ 	font-size: 14px;
  	font-weight: 700;
  	height:30px;
  	line-height:30px;
