@@ -1,0 +1,122 @@
+/*.dyn-button a{
+    border:0;
+    color:$black;
+    display: inline-block;
+    font-size: $font-sm1;
+    line-height:$font-lg3;
+    letter-spacing:1px;
+    text-transform: uppercase;     
+}*/
+.dyn-button { 
+    a{
+        border:0;
+        border-radius: 50px;
+        color:$red;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 30px;
+        letter-spacing:1.5px;
+        text-transform: uppercase;   
+        cursor:pointer;
+        height:50px;
+        min-width: 215px;
+        padding:10px;
+        text-align: center;
+        overflow:hidden;
+        position:relative;
+        z-index:1;
+        @include single-transition(all, 0.3s, cubic-bezier(0.75, 0, 0.125, 1));
+        -webkit-backface-visibility:hidden;
+        @include transform(translate3d(0,0,0));
+        background: $white;
+        &:after {
+            border-radius: 50px;
+            background:white; 
+            z-index:-1; 
+            top:2px;
+            right:2px; 
+            left:2px; 
+            bottom:2px;
+        }
+        &:after, &:before {
+            content:"";
+            position:absolute;
+        }
+        &:before {
+            background: transparent;
+            left:0px;
+            top:0;
+            height:100%;
+            width:100%;
+            @include transform(translateY(100%));
+            @include single-transition(transform, 0.3s, cubic-bezier(0.75, 0, 0.125, 1));
+            z-index:-2;
+        }
+        &:hover { 
+            color:$sea-blue;
+            background: $black;
+            &:before {
+                @include transform(translateY(0%));
+            }
+        } 
+    }
+    &-grey a{      
+        color: $sea-blue;  
+        background: $sea-blue; 
+        &:before{
+            background: $black;
+        }  
+        &:hover{
+            color: $black;           
+        }
+    }
+    &-disable a{
+        background: $button-disable-bg;
+        color: $button-disable-bg;
+        pointer-events: none;
+    }
+    &-solid a{      
+        color: $white;  
+        background: $red; 
+        &:after{
+            background: $red;
+        } 
+        &:before{
+            background: $black;
+        }  
+        &:hover{
+            color: $black;           
+        }
+    }
+    &-blue a{      
+        color: $white;  
+        background: $dark-blue;
+        &:after{
+            background: $dark-blue;
+        }  
+        &:hover{
+            color: $sea-blue; 
+            &:after{
+                background: $white;
+            }            
+        }
+    }
+    &-white a{
+        &:before{
+            background: $black;
+        }
+    }
+    &-secondary a{      
+        color: $red;  
+        background: $red; 
+        &:after{
+            background: $white;
+        } 
+        &:before{
+            background: $black;
+        }  
+        &:hover{
+            color: $black;           
+        }
+    }
+}

@@ -1,0 +1,114 @@
+/////////////////
+// Font-family
+////////////////
+$font-awesome:'FontAwesome';
+
+$font-varelaRegular:'VarelaRound-Regular', sans-serif;
+$font-workSansBold:'WorkSans-Bold', sans-serif;
+$font-workSansRegular:'WorkSans-Regular', sans-serif;
+$font-WorkSans-Light:'WorkSans-Light', sans-serif;
+
+
+$font-path:"../fonts" !default;
+
+
+///////////////// 
+// Font-size
+////////////////
+$font-sm: 10px;
+$font-sm1: 11px;
+$font-md: 12px; 
+$font-md1: 14px;
+$font-md1-1: 14.5px;
+$font-md2: 15px;
+$font-md3: 16px;
+$font-md4: 18px;
+$font-md5: 17px;
+$font-lg: 20px;
+$font-lg2: 22px;
+$font-lg3: 24px;
+$font-lg4: 29px;
+$font-xl: 30px;
+$font-xl2: 36px;
+$font-xl3: 42px;
+$font-xl4: 50px;
+$font-xl5: 60px;
+$size: 40px;
+
+
+/////////////////
+// Colors
+////////////////
+$body-color:#53585f; 
+$primary-color: #51a6f8;
+$secondary-color: #2a426c;
+$blue: #143777; 
+$light-blue: #fafafa;
+$sea-blue: #ff9100;
+$teal:#09c7ac;    // secondary
+$green: #077969;  // link
+$darkgreen: #004a2c;  // primary
+$silver: #fafafa; // silver
+$black: #1a1e40;  //  text
+$white: #fff;   // white
+$pink: #f93a66; //tag
+$link-color: #030f1f;
+$yellow :#F28F19;
+$border-color: #31334e;
+$footer-bg: #04142c;
+$relative-path: '/html';
+$overlay-color: #b16ae0;
+$gull-grey: #a8a4a7; //accordion header
+$light-grey: #e6e6e6;
+$eagle-blue: #4e9dea;
+$dodger-blue: #f28f19;
+$button-disable-bg: #f5f5f5;
+$tiber: #2a3b55; // primary color 
+$deep-cerise: #41D4D8; // secondary color
+$form-border: #9c9c99;
+$form-border-active: #ff9100;
+$quote-bg: $yellow;
+$quote-text-color:#1b3379;
+$figcaption-color: #a7a7a7;
+$servicelist-bg: #f0f0f0;
+$card-text-gray: #9b9b9b;
+$orange-color: #ed8c19;
+$green-color: #6eba40;
+$dark-blue: #133775;
+$search-border: #cdcdcd;
+$grey-bg:#efefef;
+$back-text:#1a1e40;
+$blue-violet:#921de0;
+$turbo-yellow:#f4d228;
+$figcaption-border:#e3e3e5;
+$bullet-color:#5bdce8;
+
+$red: #f50057;
+$orange: #ff9100;
+$green: #07aa17;
+$darkBlue: #1a1e40;
+$lightBlue: #60d9ea;
+$purple: #8686b2;
+$yellow: #ffc87e;
+$shadow: #f0f0f8;
+$arrow: #e1e2e6;
+$turbo-black: #393C52;
+
+
+$intro-frame: #132640;
+
+//////////
+//form
+//////////
+$fm-border-thickness: 1px;
+
+$fm-border-color: #9c9c9c;
+$fm-flt-label-bg: $form-border-active;
+$fm-flt-label-color: #9c9c9c;
+$error-color: #f28f18;
+
+$form-seperator: #f6f6f6;
+$button-disable: #d8d9dd;
+$button-disable-bg: #f7f7f9;
+$select-row:$button-disable-bg;
+$border: $border-color;

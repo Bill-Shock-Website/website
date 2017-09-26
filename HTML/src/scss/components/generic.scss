@@ -1,0 +1,163 @@
+
+/*.breadcrumb{
+	background-color: transparent;
+	padding:8px 0 0;
+	margin-bottom:0;
+	li, a{
+		color:$red;
+	}
+	li{
+		font:{
+			size:12px;
+		}
+		float: left;
+		padding:0 5px 0 10px;
+		position: relative;
+		text-transform: uppercase;
+		&:first-child{
+			padding-left:0;
+			&:before{
+				display: none;
+			}
+		}
+		&:before{
+			color:$white;
+			content:"/";
+			left:0;
+			position: absolute;
+			top:0;
+		}
+	}
+}
+*/
+
+//generic
+.generic-page {
+	padding-bottom: 80px;
+	padding-top: 80px;
+	.form-row{
+		margin:{
+			left: 0;
+			right: 0;
+		}
+		label{
+			margin-bottom: 0px;
+		}
+	}
+	a{
+		font-family: inherit;
+	}
+}
+.content-image {
+	border-bottom: 1px solid $figcaption-border;
+	margin: 64px -25% 70px;
+	figcaption {
+		padding: 20px 16.6667%;
+	}
+	img {
+		width: 100%;
+	}
+}
+
+//band 
+
+.quates-block {
+	background-color: $orange;
+	margin: 44px -160px;
+	padding: {
+		top: 85px;
+		bottom: 90px;
+		left: 50px;
+		right: 50px;
+	}
+	h5 {
+		padding-bottom: 40px;
+		text-transform: uppercase;
+	}
+	p {
+		font-size: 30px;
+		font-style: italic;
+		font-family: $font-WorkSans-Light;
+		line-height: 38px;
+	}
+}
+.generic-list{
+	li{
+		padding: 2px 16px;
+		border-bottom: 1px solid $light-grey;
+		position: relative;
+		&:before{
+			content: "\f105";
+			font:{
+				family: FontAwesome;
+				size: $font-sm;
+			}
+			@include position(absolute, $left: 0px, $top: 3px);
+		}	
+	}
+	/*a{
+		color: $sea-blue;
+		display: block;		
+		@include transition(all 0.05s ease-in-out); 
+		&:hover{
+			color: $black;
+		}
+	}*/
+	&-dotted{
+		li{
+			border-bottom: none;
+			&:before{
+				color:$bullet-color;
+				content: "\f111";
+				font-size: 7px;
+			}
+		}
+	}
+	&-ordered{
+		ol{
+			counter-reset: item;
+			list-style: decimal;
+		}
+		li{
+			border-bottom: none;
+			&:before{
+				color: $sea-blue;
+				content: counter(item) "";
+  				counter-increment: item;
+  				font-size: 10px;
+  				font-family: $font-varelaRegular;
+			}
+		}
+	}
+	&-arrow{
+		li{
+			border-bottom: none;
+			&:before{
+				color: $sea-blue;
+				content: "\f0da";
+				font-size: 12px;
+			}
+		}
+	}
+}
+.bottom-space{
+	margin-bottom: 30px;
+}
+
+@media screen and (max-width:1023px){
+	.content-image {
+		margin: inherit;	
+	}
+}
+
+@media screen and (max-width:767px){
+	[class*=col-] {
+		max-width: 100%;
+		flex: 100%;
+	}
+}
+@media screen and (max-width: 640px){
+	.quates-block{
+		margin:0 !important;
+	}
+}

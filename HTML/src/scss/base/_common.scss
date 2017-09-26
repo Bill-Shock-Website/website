@@ -1,0 +1,280 @@
+html,
+body,
+form,
+figure, figcaption,
+ul,ol{
+    margin: 0px;
+    padding: 0px;
+}
+ol{
+    padding-bottom: 10px;
+}
+
+b,
+strong {
+    font-weight: normal;
+}
+a {
+    color: $red;
+    font-family: $font-workSansBold;    
+    @include transition-property(all);
+    @include transition-duration(.2s);
+    @include transition-timing-function(linear);
+    &:hover, &:focus{
+        color:$link-color;
+        outline:none;
+        text-decoration: none;
+    }
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0px;
+    visibility: hidden;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.fL {
+    float: left;
+}
+
+.fR {
+    float: right;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+.no-padding {
+    padding:0;
+}
+.center-block {
+    float: none;
+    margin: 0 auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+input,
+textarea,
+select {
+    @include box-shadow(none);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    @include border-radius(0)
+}
+
+input:focus,
+textarea:focus,
+button:focus,
+select:focus {
+    @include box-shadow(none);
+    outline: none;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+input[type=number] {
+   -moz-appearance:textfield;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px $white;
+}
+
+textarea {
+    resize: none;
+}
+
+.center-block{
+    float: none !important;
+    margin: 0 auto;
+    padding:{
+        left:0;
+        right:0;
+    };
+}
+.container{
+    width:960px;
+}
+@media(max-width:1023px) {
+    .container {
+        width:100%;
+    }    
+}
+.render-blk{
+    opacity:0;
+    overflow:hidden;
+}
+//Typography
+h1, h2, h3, h4,h5,h6{
+     margin: 0px;   
+     font-weight: inherit;
+}
+h1{
+    padding-bottom: 10px;    
+}
+body{
+    background-color: $white;
+    color: $turbo-black;
+    font:{
+        family: $font-workSansRegular;
+        size:$font-md1-1;
+    }
+    line-height: $font-lg3;
+    letter-spacing: -0.25px;
+    padding-bottom:24px;
+    margin-bottom: 0;
+}
+h1, h2{
+    font-family: $font-varelaRegular;
+}
+h3,h4,h5,h6, strong{
+    font-family: $font-workSansBold;
+}
+h2, h4{
+    padding-bottom: 5px;
+}
+h1{  
+    font:{
+        size:$font-xl5;
+    }
+    line-height:$font-xl5;
+}
+h2{
+    font-size: $font-xl2;
+    line-height: $font-xl3;
+}
+h3{
+    font-size: $font-lg3;
+    line-height: $font-xl2;
+}
+h4{
+    font-size: $font-md2;
+    line-height: $font-lg;
+}
+h5{
+    font-size: $font-md1;
+    line-height: $font-md4;
+}
+h6{
+    font:{
+        size: $font-md;
+    }
+    line-height:$font-lg;
+}
+h5, h6{    
+    letter-spacing:1px;
+    text-transform: uppercase;
+}
+.intro-copy{
+    font-size: 16.5px;
+}
+.intro-hero-banner{
+    background-color:$intro-frame;
+    height: 100vH;
+    width:100%;
+    position: relative;
+    margin-top:0;
+    @include transition-property(all);
+    @include transition-duration(2s);
+    @include transition-delay(1s);
+    @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+    &.slide{
+        margin-top:-100vH;
+    }
+    &-content{
+        display: none;
+        max-width: 400px;
+        position: absolute;
+        @include transform(translate(-50%, -50%));
+        width:100%;
+        top: 50%;
+        left: 50%;
+    }
+}
+
+.banner-tile{
+    background:{
+        size: cover;
+        attachment: fixed;
+        repeat:no-repeat;
+        position: bottom center;
+    }
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    position: absolute;
+    z-index: 3;
+}
+
+#banner-tile-one{
+    background:{
+        image:url('#{$relative-path}/img/fg-1.png');
+    }
+}
+#banner-tile-two{
+    background:{
+        image:url('#{$relative-path}/img/fg-2.png');
+    }
+}
+
+#banner-tile-three{
+    background:{
+        image:url('#{$relative-path}/img/fg-3.png');
+    }
+}
+
+.skrollr-mobile{
+   overflow-y: scroll !important;
+}
+
+.subpage{
+    header{
+        opacity:1;
+    }
+}
+.content-row{ padding-left:0; padding-right:0}
+.mobile-show{ display: none; }
+@media screen and (max-width:1024px){
+    .banner-tile{
+        background:{
+            position: bottom !important;
+        }
+    }
+}
+@media screen and (max-width:767px) {
+    .desk-show{ display: none}
+    .mobile-show{ display: block; }
+}
+@media screen and (max-width: 640px) {
+    .intro-hero-banner{
+        &-content{
+            width:200px;
+        }
+    }
+}
