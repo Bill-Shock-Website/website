@@ -1,35 +1,51 @@
-
-/*.breadcrumb{
-	background-color: transparent;
-	padding:8px 0 0;
-	margin-bottom:0;
-	li, a{
-		color:$red;
-	}
-	li{
-		font:{
-			size:12px;
-		}
-		float: left;
-		padding:0 5px 0 10px;
-		position: relative;
-		text-transform: uppercase;
-		&:first-child{
-			padding-left:0;
-			&:before{
-				display: none;
-			}
-		}
+//custom style for dropdown
+.ui-selectmenu-menu{
+	@include position(absolute, $top: 48px!important, $left: 0px);
+	@include transition(none);
+}
+.ui-selectmenu-button.ui-button:before{
+	z-index: 9;
+}
+.ui-selectmenu-button.ui-button{
+	background-color: $white;
+	border: 1px solid $form-border;
+	padding: 15px;
+}
+.ui-selectmenu-menu .ui-menu{
+	background-color: $white;
+	border: 1px solid $form-border;
+	border-top: none;
+}
+.ui-selectmenu-menu.ui-selectmenu-open {
+	margin-left: -0.5px;
+}
+.ui-menu {
+	.ui-menu-item{
+		padding: 0px;
 		&:before{
-			color:$white;
-			content:"/";
-			left:0;
-			position: absolute;
-			top:0;
+			display: none;
+		}
+		&-wrapper{
+			padding: 10px 15px;
 		}
 	}
 }
-*/
+.select-row{
+	padding-bottom: 18px;
+	position: relative;
+}
+
+.intro-content{
+	padding-bottom: 20px;
+	p{
+		color:$back-text;
+		font-size: $font-md3;
+		line-height: $font-lg3;
+	}
+}
+.intro-content >:last-child, .content-row >:last-child, .content-row [class*="col-"] >:last-child{
+	padding-bottom: 0	
+}
 
 //generic
 .generic-page {

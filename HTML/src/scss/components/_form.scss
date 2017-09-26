@@ -4,11 +4,12 @@
 	position:relative;
 		&.error-row{
 			.floating-item-input{
-				border-bottom:1px solid $error-color;
+				border-bottom:1px solid;
+				border-color: $error-color;
 			}
 			.floating-item-label, 
 			.floating-item-input:focus ~ .floating-item-label{
-				//color:$error-color;
+				color:$error-color;
 			}
 		}
 		.error-message{

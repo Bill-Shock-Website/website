@@ -13,8 +13,8 @@
 			border-color:$primary-color;
 		}
 	}
-	&-input:focus ~ &-label {
-		color:$orange;
+	&-input:focus ~ &-label {		
+		color: $form-border-active;
 	}
 	&-input:focus ~ &-label, .input-email-active ~ &-label {
 		top:-12px;		
@@ -41,8 +41,13 @@
 		top:14px;
 	}
 	&.input-animate{
+		color: $form-border-active!important;
+		text-transform: uppercase;
 		input{
 			border-color: $form-border-active;
+		}
+		span{					
+			font-family: $font-workSansBold;
 		}
 	}
 }
