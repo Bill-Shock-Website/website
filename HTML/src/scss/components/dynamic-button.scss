@@ -1,4 +1,26 @@
 .dyn-button { 
+    max-width: 215px;
+    width: 100%;    
+    &.learn-more{
+        max-width: 150px;
+         a{
+            border: none;
+            background: transparent;
+            max-width: inherit;
+            &:before{
+                color: $red;
+                content: "\f107";
+                font-family: $font-awesome;
+                font-size: 18px;
+                @include position(absolute, $left:5px, $top:50%);
+                @include transform(translateY(-50%));
+            }
+            &:hover{
+                background: transparent;
+                color: $turbo-black;
+            }
+        }
+    }
     a{
          border:2px solid $red;
         border-radius: 50px;

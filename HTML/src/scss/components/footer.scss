@@ -2,21 +2,18 @@ footer{
 	padding: 60px 0;
 	.copy, li{
 		display: inline-block;
-		vertical-align: middle;
-	}
-	ul{
-		float: right;
 	}
 	li{
-		padding-left: 30px;
-		a{
-			&:hover{
-				color: $red;
-			}
+		&:not(:last-child){
+			padding: 0 18px;
 		}
 	}
-	a, copy{
+	a {
+		font-family: inherit;
+	}
+	copy{
 		color: $black;
+		float: left;
 		font-family: $font-workSansRegular;
 	}
 }
@@ -26,7 +23,43 @@ footer{
 		padding: 43px 0px;
 	}
 }
-
+.privacy{
+	float:left;
+}
+.social-icons{
+	float:right;
+	font-size: 20px;
+	margin-left: 20px;
+	position: relative;
+	&:before{
+		color: #dee2e5;
+		content: "|";
+		@include position(absolute, $left: 0, $top: 50%);
+		@include transform(translateY(-50%));
+	}
+}
+@media screen and (max-width: 1024px){
+	footer{
+		.copy{
+			margin-bottom: 5px;
+			text-align: center;
+    	width: 100%;
+		}
+		.fR{
+			float: none;
+    	text-align: center;
+		}
+		.privacy,.social-icons{
+			float: none;
+			margin-bottom: 5px;
+		}
+		.social-icons{
+			&:before{
+				display: none;
+			}
+		}
+	}
+}
 @media screen and (max-width: 640px){
 	footer{
 		padding: 30px 0;
@@ -43,6 +76,14 @@ footer{
 					padding-left:0
 				}
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 640px){
+	footer{
+		ul{
+			padding: 0;
 		}
 	}
 }

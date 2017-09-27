@@ -78,6 +78,7 @@
 
 .quates-block {
 	background-color: $orange;
+	color: $white;
 	margin: 44px -160px 69px;
 	padding: 78px 50px 50px;
 	h5 {
@@ -154,8 +155,9 @@
 	margin-bottom: 30px;
 }
 .dbl-button{
-	.dyn-button:first-child{
-		a{
+	.dyn-button{
+		display: inline-block;
+		&:first-child{
 			float: left;
 			margin-right: 25px;
 		}
@@ -190,5 +192,15 @@ p{
    			font-size: 18px;
    			line-height: 24px;
    		}
+	}
+	.dbl-button{
+		.dyn-button{
+			display: inline-block;
+			&:first-child{
+				float: none;
+				margin-right: 0px;
+				margin-bottom: 20px;
+			}
+		}
 	}
 }

@@ -15,7 +15,7 @@
 }
 .tile{
     position: relative;
-	@include display-flex;
+		@include display-flex;
     @include flex-direction(column);
     @include align-items(flex-end);
     @include justify-content(space-around);

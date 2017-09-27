@@ -196,7 +196,26 @@
           $card.unslick();          
         }
       }
+      $('nav li a').on('click', function(e) {
+        var id = $(this).attr('href');
+            // target element
+        var $id = $(id);
+        if ($id.length === 0) {
+            return;
+        }
+
+        // prevent standard hash navigation (avoid blinking in IE)
+        e.preventDefault();
+
+        // top position relative to the document
+        var pos = $id.offset().top;
+
+        // animated top scrolling
+        $('body, html').animate({scrollTop: pos}, 1000);
+      });
+
     },
+
 
     _workSlider =function(){
        $('.slider-for').slick({
@@ -288,16 +307,15 @@
         });
                 
         $('.testimonial-blog').slick({
-            arrows: false,
+            arrows: true,
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true,
-            autoplay: true,
-            autoplaySpeed: 4000,
             fade: true,
-            cssEase: 'linear',
             adaptiveHeight: true,
+            prevArrow:'<i class="fa fa-angle-left prev"></i>',
+            nextArrow:'<i class="fa fa-angle-right next"></i>',
             responsive: [            
               {
                 breakpoint: 767,

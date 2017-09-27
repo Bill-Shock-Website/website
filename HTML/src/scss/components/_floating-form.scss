@@ -4,7 +4,7 @@
 	width:100%;
 	&-input {
 		border: none;
-		border:$fm-border-thickness solid $fm-border-color;
+		border:$fm-border-thickness solid $fm-border-color;	
 		@include transition-event(border, 0.25s, ease-in);
 		padding:10px 15px;
 		width: 100%;
@@ -17,6 +17,10 @@
 		color: $form-border-active;
 	}
 	&-input:focus ~ &-label, .input-email-active ~ &-label {
+		color: $form-border-active;
+		font-family: $font-workSansBold;
+		font-size: 12px;
+		text-transform: uppercase;
 		top:-12px;		
 	}
 	&-label {
@@ -45,9 +49,6 @@
 		text-transform: uppercase;
 		input{
 			border-color: $form-border-active;
-		}
-		span{					
-			font-family: $font-workSansBold;
 		}
 	}
 }
