@@ -222,7 +222,7 @@
 
     _workSlider =function(){
        $('.slider-for').slick({
-          autoplay:true,
+          autoplay:false,
           autoplaySpeed: 7000,
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -242,7 +242,7 @@
           ]
         });
         $('.slider-nav').slick({
-          autoplay:true,
+          autoplay:false,
           autoplaySpeed: 7000,
           slidesToShow: 1,
           slidesToScroll: 1,
