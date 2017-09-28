@@ -35,9 +35,11 @@ footer{
 	margin-left: 20px;
 	position: relative;
 	&:before{
+		border: 1px solid;
 		color: #dee2e5;
-		content: "|";
+		content: "";
 		font-size: 14px;
+		height: 14px;
 		@include position(absolute, $left: 0, $top: 50%);
 		@include transform(translateY(-50%));
 	}

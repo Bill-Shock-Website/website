@@ -196,7 +196,7 @@
           $card.unslick();          
         }
       }
-      $('nav li a').on('click', function(e) {
+      $('nav li a, .homebanner .dyn-button a').on('click', function(e) {
         var id = $(this).attr('href');
             // target element
         var $id = $(id);
