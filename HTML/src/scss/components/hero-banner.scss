@@ -749,8 +749,7 @@
 		}
 		&-blk{
 			&:before{
-				@include background(radial-gradient(at 50% bottom, rgba(#2f2f2f, 0.2), #fff, #fff));
-				bottom: 70px;
+				display: none;
 			}
 		}
 	}
@@ -921,12 +920,6 @@
 		}
 		&-innerBlk{
 			max-width: 280px;
-		}
-		&-blk{
-			&:before{
-				@include background(radial-gradient(at 50% bottom, rgba(#2f2f2f, 0.5), rgba(#2f2f2f, 0.2), #fff));				
-				@include width-height(100%, 50%);
-			}
 		}
 	}
 	.testimonial-blk {

@@ -75,6 +75,12 @@
             
         // mobile accordion
         if(windowWidth <767){
+
+           $('nav a').on('click', function() {
+              $('.menu-toggle').removeClass('on');
+              $('nav').removeClass('slide');
+          });
+
           $(document).on('click', '.accordion h6', function(){
             if($(this).hasClass('open') === false) {
               $('.accordion h6').removeClass('open');
@@ -150,14 +156,7 @@
         $('.menu-toggle').on('click', function() {
             $(this).toggleClass('on');
             $('nav').toggleClass('slide');
-            $('body').toggleClass('hidden');
         });
-         $('nav a').on('click', function() {
-            $('.menu-toggle').toggleClass('on');
-            $('nav').toggleClass('slide');
-            $('body').toggleClass('hidden');
-        });
-
     },
 
 
@@ -186,6 +185,7 @@
     },
 
     _processSlick = function(){
+      var headerHeight = $('header').innerHeight();
       var $window = $(window),
           $card = $('.process-innerBlk');
 
@@ -206,15 +206,12 @@
         var id = $(this).attr('href');
             // target element
         var $id = $(id);
-        if ($id.length === 0) {
-            return;
-        }
 
         // prevent standard hash navigation (avoid blinking in IE)
         e.preventDefault();
 
         // top position relative to the document
-        var pos = $id.offset().top;
+        var pos = $id.offset().top-headerHeight;
 
         // animated top scrolling
         $('body, html').animate({scrollTop: pos}, 1000);
