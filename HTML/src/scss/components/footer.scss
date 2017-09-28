@@ -10,6 +10,9 @@ footer{
 	}
 	a {
 		font-family: inherit;
+		&:hover {
+			color: $orange;
+		}
 	}
 	copy{
 		color: $black;
@@ -34,6 +37,7 @@ footer{
 	&:before{
 		color: #dee2e5;
 		content: "|";
+		font-size: 14px;
 		@include position(absolute, $left: 0, $top: 50%);
 		@include transform(translateY(-50%));
 	}
@@ -52,6 +56,10 @@ footer{
 		.privacy,.social-icons{
 			float: none;
 			margin-bottom: 5px;
+			margin-left: inherit;
+			&:hover{
+				color: $orange;
+			}
 		}
 		.social-icons{
 			&:before{

@@ -445,7 +445,7 @@
         // equal height rows
         var highestBox = 0;
         // Select and loop the elements you want to equalise
-          $('.tile-caption', this).each(function(){
+          $('.blog-caption h4', this).each(function(){
             
             // If this box is higher than the cached highest then store it
             if($(this).height() > highestBox) {
@@ -453,7 +453,7 @@
             }          
           });             
           // Set the height of all those children to whichever was highest 
-          $('.tile-caption',this).height(highestBox);
+          $('.blog-caption h4',this).height(highestBox);
 
           var highestBox1 = 0;
         // Select and loop the elements you want to equalise

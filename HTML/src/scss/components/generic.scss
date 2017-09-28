@@ -93,63 +93,20 @@
 	}
 }
 .generic-list{
+	margin-bottom: 30px;
 	li{
 		padding: 2px 16px;
-		border-bottom: 1px solid $light-grey;
 		position: relative;
 		&:before{
-			content: "\f105";
+			color:$bullet-color;
+			content: "\f111";
 			font:{
 				family: FontAwesome;
-				size: $font-sm;
+				size: 7px;
 			}
 			@include position(absolute, $left: 0px, $top: 3px);
 		}	
-	}
-	/*a{
-		color: $sea-blue;
-		display: block;		
-		@include transition(all 0.05s ease-in-out); 
-		&:hover{
-			color: $black;
-		}
-	}*/
-	&-dotted{
-		li{
-			border-bottom: none;
-			&:before{
-				color:$bullet-color;
-				content: "\f111";
-				font-size: 7px;
-			}
-		}
-	}
-	&-ordered{
-		ol{
-			counter-reset: item;
-			list-style: decimal;
-		}
-		li{
-			border-bottom: none;
-			&:before{
-				color: $sea-blue;
-				content: counter(item) "";
-  				counter-increment: item;
-  				font-size: 10px;
-  				font-family: $font-varelaRegular;
-			}
-		}
-	}
-	&-arrow{
-		li{
-			border-bottom: none;
-			&:before{
-				color: $sea-blue;
-				content: "\f0da";
-				font-size: 12px;
-			}
-		}
-	}
+	}	
 }
 .bottom-space{
 	margin-bottom: 30px;
@@ -169,9 +126,65 @@ p{
 		font-family: inherit;
 	}
 }
+
+// Blog detail
+
+.blog-detail {
+	padding: {
+		top: 100px;
+		bottom: 45px;
+	}
+	&-row{
+		flex: inherit;
+		margin: 0px 10px 19px;
+		max-width: calc(33.3333% - 20px);
+		padding: 0px;
+		@include transition(all 0.12s ease-in-out);
+		.blog{
+			&-image{
+				position: relative;
+				&:before{
+					content: "";
+			    background-image: url(/html/img/splitter.png);
+			    background-repeat: repeat-x;
+			    background-size: 30px;
+			    height: 50px;
+			    width: 100%;
+			    z-index: 1;
+			    @include position(absolute, $left: 0,$bottom: -45px)
+				}
+				img{
+					width: 100%;
+				}
+			}
+			&-caption{
+				box-shadow: 0 0.1px 20px #e6e6e6;
+				padding: 20px 13px 12px 13px;
+				h4{
+					color: $red;
+				}
+				p{
+					margin-bottom: 0;
+				}
+			}
+		}
+		&:hover{
+			@include transform(scale(1.06));
+		}
+	}
+}
 @media screen and (max-width:1023px){
 	.content-image {
 		margin: 30px 0px;	
+	}
+	.blog-detail{
+		&-row{
+			flex: inherit;
+			max-width: calc(50% - 20px)!important;
+			&:hover{
+				@include transform(inherit);
+			}
+		}
 	}
 }
 
@@ -201,6 +214,13 @@ p{
 				margin-right: 0px;
 				margin-bottom: 20px;
 			}
+		}
+	}
+	.blog-detail{
+		padding: 40px 5px 10px;
+		&-row{
+			flex: inherit;
+			max-width: 100%!important;
 		}
 	}
 }
