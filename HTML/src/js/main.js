@@ -152,6 +152,12 @@
             $('nav').toggleClass('slide');
             $('body').toggleClass('hidden');
         });
+         $('nav a').on('click', function() {
+            $('.menu-toggle').toggleClass('on');
+            $('nav').toggleClass('slide');
+            $('body').toggleClass('hidden');
+        });
+
     },
 
 
