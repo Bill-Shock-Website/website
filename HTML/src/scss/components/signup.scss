@@ -14,7 +14,7 @@
 	}
 	.breadcrumb{
 		background-color: transparent;
-		color: $red;
+		color: $link-color;
 		font-family: $font-workSansBold;  
 		font-size: 12px;
 		letter-spacing: 1.5px;
@@ -35,6 +35,12 @@
 					@include position(absolute, $right: -5px, $top: 50%);
 					@include transform(translateY(-50%));
 				}
+			}
+		}
+		a{
+			color: $link-color;
+			&:hover{
+				color: $red;
 			}
 		}
 	}

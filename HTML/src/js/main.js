@@ -223,10 +223,12 @@
     _workSlider =function(){
        $('.slider-for').slick({
           autoplay:true,
-          autoplaySpeed: 4000,
+          autoplaySpeed: 7000,
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
+          arrows: true, 
+          prevArrow:'<i class="fa fa-angle-left prev"></i>',
+          nextArrow:'<i class="fa fa-angle-right next"></i>',
           dots: true,
           fade: true,
           asNavFor: '.slider-nav',
@@ -241,7 +243,7 @@
         });
         $('.slider-nav').slick({
           autoplay:true,
-          autoplaySpeed: 4000,
+          autoplaySpeed: 7000,
           slidesToShow: 1,
           slidesToScroll: 1,
           asNavFor: '.slider-for',
